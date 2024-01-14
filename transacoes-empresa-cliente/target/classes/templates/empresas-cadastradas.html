@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresas Cadastradas</title>
+</head>
+<body>
+    <h1>Empresas Cadastradas</h1>
+    
+    <!-- Exibir a lista de empresas -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>CNPJ</th>
+                <th>Saldo</th>
+                <th>Ação</th> 
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="empresa : ${empresas}">
+                <td th:text="${empresa.id}"></td>
+                <td th:text="${empresa.nome}"></td>
+                <td th:text="${empresa.cnpj}"></td>
+                <td th:text="${empresa.saldo}"></td>
+                <td>
+                    <a th:href="@{/formulario-deposito(clienteId=${cliente.id}, empresaId=${empresa.id})}">
+                        <button>Depositar</button>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

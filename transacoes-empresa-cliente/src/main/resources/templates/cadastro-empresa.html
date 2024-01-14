@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Empresa</title>
+</head>
+<body>
+    <h1>Cadastro Empresa</h1>
+
+    <form action="/processar-cadastro-empresa" method="post">
+        <label for="cnpj">CNPJ:</label>
+        <input type="text" id="cnpj" name="cnpj" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+
+        <label for="confirmaSenha">Confirme a Senha:</label>
+        <input type="password" id="confirmaSenha" name="confirmaSenha" required>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>
